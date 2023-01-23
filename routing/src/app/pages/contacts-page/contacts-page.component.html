@@ -2,7 +2,8 @@
 
 <!-- TODO: Lista de contactos. -->
 <div *ngFor="let contact of contacts">
-  <div routerLink="{{ contact.id }}">
-    <h1> {{ contact.name }} </h1>
+  <div routerLink="{{ contact.id }}"> <!-- [state]="contact" -->
+    <h2> {{ contact.name }} </h2>
+    <button (click)="backToHome(contact)">Send contact</button>
   </div>
 </div>
