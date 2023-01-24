@@ -1,1 +1,22 @@
-<p>form-array works!</p>
+<form [formGroup]="myFormArray">
+    <h3>Data Live</h3>
+    <p>{{ myFormArray.value | json }}</p>
+
+    <!-- INPUTS: Name and Surname -->
+    <input placeholder="name" formControlName="name">
+    <input placeholder="surname" formControlName="surname">
+
+    <!-- Array form -->
+    <div formArrayName="phones">
+        <!-- Iteración por cada teléfono dentro de la lista -->
+        <div *ngFor="let phone of phoneForm.controls; let i = index" [formGroupName]="i">
+            <h4>Phone: {{i}}</h4>
+            <input placeholder="pre" formControlName="pre">
+            <input placeholder="number" formControlName="number">
+            <!-- DELETE PHONE -->
+            <button (click)="deletePhone(i)">X</button>
+        </div>
+    </div>
+    <!-- ADD PHONE -->
+    <button (click)="addPhone()">Add</button>
+</form>

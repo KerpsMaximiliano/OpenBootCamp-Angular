@@ -1,1 +1,16 @@
-<p>form-nested works!</p>
+<form [formGroup]="myFormNested">
+    <h3>Data Live</h3>
+    <p>{{ myFormNested.value | json }}</p>
+
+    <h4>Phone: </h4>
+    <div formGroupName="phone">
+        <input placeholder="pre" formControlName="pre">
+        <input placeholder="number" formControlName="number">
+    </div>
+
+    <h4>Mobile: </h4>
+    <div formGroupName="mobile">
+        <input placeholder="pre" formControlName="pre">
+        <input placeholder="number" formControlName="number">
+    </div>
+</form>
