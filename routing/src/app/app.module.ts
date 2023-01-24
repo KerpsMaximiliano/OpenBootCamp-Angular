@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// PAGES ----> ./src/app/pages/
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { ContactDetailtPageComponent } from './pages/contact-detailt-page/contact-detailt-page.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// FORMS ----> ./src/app/components/form/
+import { FormComponent } from './components/forms/form/form.component';
+import { FormNestedComponent } from './components/forms/form-nested/form-nested.component';
+import { FormArrayComponent } from './components/forms/form-array/form-array.component';
+import { FormValidatedComponent } from './components/forms/form-validated/form-validated.component';
 
 @NgModule({
     declarations: [
@@ -20,8 +28,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         NotFoundPageComponent,
         ContactsPageComponent,
         ContactDetailtPageComponent,
+        FormComponent,
+        FormNestedComponent,
+        FormArrayComponent,
+        FormValidatedComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })
