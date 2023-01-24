@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
     constructor(private router: Router) {}
     ngOnInit(): void {
         this.token = sessionStorage.getItem('token');
-        if(history.state.data){
+        if (history.state.data) {
             console.log(history.state.data);
             this.contactSelect = history.state.data;
         }
@@ -21,9 +21,9 @@ export class HomePageComponent implements OnInit {
     goContacts(): void {
         let navigationExtras: NavigationExtras = {
             queryParams: {
-                sex: 'undefined'
-            }
-        }
+                sex: 'all',
+            },
+        };
         this.router.navigate(['contacts'], navigationExtras);
     }
 }

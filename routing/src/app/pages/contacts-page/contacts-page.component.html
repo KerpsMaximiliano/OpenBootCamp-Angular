@@ -2,8 +2,17 @@
 
 <!-- TODO: Lista de contactos. -->
 <div *ngFor="let contact of contacts">
-  <div routerLink="{{ contact.id }}"> <!-- [state]="contact" -->
-    <h2> {{ contact.name }} </h2>
+  <div routerLink="{{ contact.id }}" [state]="{ data: contact, filter: filterSex }">
+    <h2 class="contact"> {{ contact.name }} </h2>
     <button (click)="backToHome(contact)">Send contact</button>
   </div>
 </div>
+
+<ng-container *ngIf="filterSex == 'female' || filterSex == 'male' ; else listComplete">
+    <p>List {{ filterSex }}</p>
+</ng-container>
+<ng-template #listComplete>
+    <p>N/A filter.</p>
+</ng-template>
+
+<a routerLink="/home">Return</a>

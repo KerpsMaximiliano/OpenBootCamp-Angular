@@ -10,18 +10,19 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { ContactDetailtPageComponent } from './pages/contact-detailt-page/contact-detailt-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePageComponent,
-    LoginPageComponent,
-    NotFoundPageComponent,
-    ContactsPageComponent,
-    ContactDetailtPageComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        HomePageComponent,
+        LoginPageComponent,
+        NotFoundPageComponent,
+        ContactsPageComponent,
+        ContactDetailtPageComponent,
+    ],
+    imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}
