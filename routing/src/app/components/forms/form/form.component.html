@@ -1,1 +1,25 @@
-<p>form works!</p>
+<!-- Formulario Reactivo Vasico -->
+<form [formGroup]="myForm">
+    <!-- Previsualización de los valores del Form -->
+    <h1>Datos en vivo del Form</h1>
+
+    <!-- Pipe json para convertir el form y renderizarlo en la vista -->
+    <p>{{ myForm.value | json }}</p>
+
+    <!-- Campos del formulario -->
+    <mat-form-field>
+        <input matInput placeholder="name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="surname" formControlName="surname">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="phone" formControlName="phone">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="direction" formControlName="direction">
+    </mat-form-field>
+</form>

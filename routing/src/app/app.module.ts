@@ -20,6 +20,9 @@ import { FormNestedComponent } from './components/forms/form-nested/form-nested.
 import { FormArrayComponent } from './components/forms/form-array/form-array.component';
 import { FormValidatedComponent } from './components/forms/form-validated/form-validated.component';
 
+// ANGULAR MATERIAL
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -40,6 +43,7 @@ import { FormValidatedComponent } from './components/forms/form-validated/form-v
         HttpClientModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
+        MatFormFieldModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

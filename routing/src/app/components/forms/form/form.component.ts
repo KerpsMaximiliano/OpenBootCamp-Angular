@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
     // * Definición del formulario
-    myForm: FormGroup | undefined;
+    myForm: FormGroup = new FormGroup({});
 
     // * Inyección de la clase FormBuilder para construir el FormGroup.
     constructor(private formBuilder: FormBuilder) {}
