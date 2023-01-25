@@ -22,6 +22,7 @@ import { FormValidatedComponent } from './components/forms/form-validated/form-v
 
 // ANGULAR MATERIAL
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { PipesExampleComponent } from './components/pipes-example/pipes-example.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         FormNestedComponent,
         FormArrayComponent,
         FormValidatedComponent,
+        PipesExampleComponent,
     ],
     imports: [
         BrowserModule,

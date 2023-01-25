@@ -1,0 +1,59 @@
+<h1>PIPES NATIVES IN ANGULAR 13</h1>
+
+<!-- FECHAS -->
+<h2>S/PIPES</h2>
+<p>Cumpleaños: {{ dob }}</p>
+
+<br>
+
+<h2>PIPE Básico</h2>
+<p>Cumpleaños: {{ dob | date }}</p>
+
+<br>
+
+<h2>PIPE Format: dd/MM/YYYY</h2>
+<p>Cumpleaños: {{ dob | date: "dd/MM/yyyy" }}</p>
+
+<br>
+
+<h2>PIPE Format: Short/Full</h2>
+<p>
+    Cumpleaños: {{ dob | date: 'shortDate' }}
+    <strong>Short</strong>
+</p>
+<p>
+    Cumpleaños: {{ dob | date: 'fullDate' }}
+    <strong>Full</strong>
+</p>
+
+<br>
+
+<h2>PIPE Format: Short/Full</h2>
+<p>Cumpleaños: {{ dob | date: dateFormat }}</p>
+
+<button (click)="setFormat()">Change {{ !change ? 'Short' : 'Full' }}</button>
+
+<br><br>
+
+<h2>PIPE Format: Short/Full - MIN/MAY</h2>
+
+<p>
+    Cumpleaños: {{ dob | date: 'fullDate' | lowercase }}
+    <strong>(MIN)</strong>
+</p>
+<p>
+    Cumpleaños: {{ dob | date: 'fullDate' | uppercase }}
+    <strong>(MAY)</strong>
+</p>
+
+<br>
+
+<h2>PIPE Format: MIN/MAY</h2>
+<p>
+    {{ name | uppercase }}
+    <strong>(MAY)</strong>
+</p>
+<p>
+    @{{ name | lowercase }}
+    <strong>(MIN)</strong>
+</p>

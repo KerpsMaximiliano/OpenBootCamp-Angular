@@ -1,1 +1,73 @@
-<p>form-validated works!</p>
+<form [formGroup]="myFormValidated" (submit)="sendForm()">
+
+    <h3>Data live</h3>
+    <p>{{ myFormValidated.value | json }}</p>
+
+    <!--------------------------------------------------------- INPUTS + ERROS -->
+    <!------------------------------------------------------------------- NAME -->
+    <input placeholder="name" formControlName="name">
+
+    <!-- ERROR REQUIRED -->
+    <div *ngIf="name?.errors?.['required'] && name?.touched">
+        <p>Input required</p>
+    </div>
+
+    <!---------------------------------------------------------------- SURNAME -->
+    <input placeholder="surname" formControlName="surname">
+
+    <!-------------------------------------------------------------------- OLD -->
+    <input placeholder="old" formControlName="old">
+
+    <!-- ERROR REQUIRED -->
+    <div *ngIf="old?.errors?.['required'] && old?.touched">
+        <p>Input required</p>
+    </div>
+
+    <!-- ERROR MIN -->
+    <div *ngIf="old?.errors?.['min'] && old?.touched">
+        <p>Old min {{ old?.errors?.['min'].now }}</p>
+    </div>
+
+    <!-- ERROR MAX -->
+    <div *ngIf="old?.errors?.['max'] && old?.touched">
+        <p>Old max {{ old?.errors?.['max'].now }}</p>
+    </div>
+
+    <!------------------------------------------------------------------ EMAIL -->
+    <input placeholder="email" formControlName="email">
+
+    <!-- ERROR REQUIRED -->
+    <div *ngIf="email?.errors?.['required'] && email?.touched">
+        <p>Input required</p>
+    </div>
+
+    <!-- ERROR TYPE -->
+    <div *ngIf="email?.errors?.['email'] && email?.touched">
+        <p>Type Invalid</p>
+    </div>
+
+    <!--------------------------------------------------------------- PASSWORD -->
+    <input placeholder="password" formControlName="password" type="password">
+
+    <!-- ERROR REQUIRED -->
+    <div *ngIf="password?.errors?.['required'] && password?.touched">
+        <p>Input required</p>
+    </div>
+
+    <!-- ERROR FORMAT -->
+    <div *ngIf="password?.errors?.['pattern'] && password?.touched">
+        <p>Formate Invalid</p>
+    </div>
+
+    <!----------------------------------------------------------------- ACCEPT -->
+    <input placeholder="accept" formControlName="accept" type="checkbox">
+
+    <!-- ERROR REQUIRED -->
+    <div *ngIf="accept?.errors?.['requiredTrue'] && accept?.touched">
+        <p>Input required (true)</p>
+    </div>
+
+    <!-- Botón que solo se activa cuando el formulario es valido. -->
+    <button type="submit" [disabled]="myFormValidated.invalid">Send</button>
+
+</form>

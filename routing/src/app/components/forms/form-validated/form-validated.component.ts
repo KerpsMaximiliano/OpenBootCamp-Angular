@@ -11,9 +11,11 @@ export class FormValidatedComponent implements OnInit {
     constructor(private formBuilder: FormBuilder) {}
     ngOnInit(): void {
         this.myFormValidated = this.formBuilder.group({
+            // Campo requerido.
             name: ['', Validators.required],
             surname: '',
-            edad: [
+            // Campo requerido, minmax.
+            old: [
                 '',
                 Validators.compose([
                     Validators.required,
@@ -21,10 +23,12 @@ export class FormValidatedComponent implements OnInit {
                     Validators.max(115),
                 ]),
             ],
+            // Campo requerito, type: email.
             email: [
                 '',
                 Validators.compose([Validators.required, Validators.email]),
             ],
+            // Campo requerido, regex.
             password: [
                 '',
                 Validators.compose([
@@ -32,8 +36,36 @@ export class FormValidatedComponent implements OnInit {
                     Validators.pattern('[a-zA-Z]*'),
                 ]),
             ],
+            // Campo boolean, true requerido.
             accept: [false, Validators.requiredTrue],
         });
     }
+    get name() {
+        return this.myFormValidated.get('name');
+    }
+    get surame() {
+        return this.myFormValidated.get('surname');
+    }
+    get old() {
+        return this.myFormValidated.get('old');
+    }
+    get email() {
+        return this.myFormValidated.get('email');
+    }
+    get password() {
+        return this.myFormValidated.get('password');
+    }
+    get accept() {
+        return this.myFormValidated.get('accept');
+    }
+
+    // SUBMIT
+    sendForm() {
+        // Control de validaciones.
+        if (this.myFormValidated.valid) {
+            console.table(this.myFormValidated);
+            // Reset inputs.
+            this.myFormValidated.reset();
+        }
+    }
 }
-// -21:37
