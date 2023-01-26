@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <div class="row">
+    <h1 class="text-center">LIST</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 mb-4">
+      <input
+        type="text"
+        [(ngModel)]="task"
+        (keyup.enter)="addTask()"
+        class="form-control form-control-lg text-center"
+        placeholder="Enter task"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <h4>To do</h4>
+      <div
+        cdkDropList
+        class="example-list"
+        id="list-one"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="['list-two', 'list-three']"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let element of todo" cdkDrag>
+          {{ element }}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <h4>In Progress</h4>
+      <div
+        cdkDropList
+        class="example-list"
+        id="list-two"
+        [cdkDropListData]="progress"
+        [cdkDropListConnectedTo]="['list-three', 'list-one']"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let element of progress" cdkDrag>
+          {{ element }}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <h4>Done</h4>
+      <div
+        cdkDropList
+        class="example-list"
+        id="list-three"
+        [cdkDropListConnectedTo]="['list-one', 'list-two']"
+        [cdkDropListData]="done"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let element of done" cdkDrag>
+          {{ element }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

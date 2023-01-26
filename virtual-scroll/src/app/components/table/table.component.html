@@ -1,0 +1,64 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h3>Virtual Scroll</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="text-center">Table</h5>
+          <div *ngIf="error" class="text-center">
+            <span class="badge bg-danger mb-2">
+              <strong>Var min. 1</strong>
+            </span>
+          </div>
+          <div class="mb-3">
+            <input
+              [(ngModel)]="table"
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Ingrese tabla"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              [(ngModel)]="until"
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Hasta"
+            />
+          </div>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button (click)="calculate()" class="btn btn-success btn-lg">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="text-center">Resultado</h5>
+          <cdk-virtual-scroll-viewport itemSize="20">
+            <table class="table">
+              <tr *cdkVirtualFor="let value of results; let i = index">
+                <td>
+                  {{ value.table }} x {{ i }} =
+                  <strong>{{ value.result }}</strong>
+                </td>
+              </tr>
+            </table>
+          </cdk-virtual-scroll-viewport>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
