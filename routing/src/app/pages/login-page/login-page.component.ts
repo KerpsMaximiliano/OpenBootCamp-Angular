@@ -7,23 +7,30 @@ import { AuthService } from 'src/app/services/auth.service';
     templateUrl: './login-page.component.html',
     styleUrls: ['./login-page.component.css'],
 })
-export class LoginPageComponent {
-    email: string = '';
-    password: string = '';
+export class LoginPageComponent implements OnInit {
+    // email: string = '';
+    // password: string = '';
     constructor(private router: Router, private authService: AuthService) {}
+
     ngOnInit(): void {
         let token = sessionStorage.getItem('token');
         if (token) {
             this.router.navigate(['home']);
         }
     }
-    loginUser() {
-        this.authService.login(this.email, this.password).subscribe((response) => {
-            if(response.token){
-                sessionStorage.setItem('token', response.token);
-                this.router.navigate(['home']);
-            }
-        }, (error) => console.error('Ha ocurrido un error', {error}))
+
+    loginUser(value: any) {
+        let { email, password } = value;
+
+        this.authService.login(email, password).subscribe(
+            (response) => {
+                if (response.token) {
+                    sessionStorage.setItem('token', response.token);
+                    this.router.navigate(['home']);
+                }
+            },
+            (error) => console.error('Ha ocurrido un error', { error })
+        );
         // sessionStorage.setItem('token', 'true'); // JWT
         // this.router.navigate(['contacts']);
     }

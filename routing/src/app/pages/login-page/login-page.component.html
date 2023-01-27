@@ -1,8 +1,11 @@
-<h1>Página de iniciar sesión</h1>
+<!-- <h1>Página de iniciar sesión</h1> -->
 
 <!-- TODO: Formulario de Login -->
 
-<input [(ngModel)]="email" type="email" placeholder="Email">
-<input [(ngModel)]="password" type="password" placeholder="**********">
+<!-- <input [(ngModel)]="email" type="email" placeholder="Email" /> -->
+<!-- <input [(ngModel)]="password" type="password" placeholder="**********" /> -->
 
-<button (click)="loginUser()">Acceder</button>
+<!-- <button (click)="loginUser()">Acceder</button> -->
+
+<!-- Render loginForm -->
+<app-login-form (loginAction)="loginUser($event)"></app-login-form>

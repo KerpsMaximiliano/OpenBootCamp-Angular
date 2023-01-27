@@ -1,13 +1,12 @@
 <h1>Contact Detail</h1>
 
-<ng-container *ngIf="contact.email;else elseTemplate">
-    <h2>Contacto: {{ id }}</h2>
-    <h2>Nombre: {{ contact.name }}</h2>
-    <h2>Surname: {{ contact.surname }}</h2>
-    <h2>Email: {{ contact.surname }}</h2>
+<ng-container *ngIf="contact.email; else elseTemplate">
+    <h2>{{ id }}</h2>
+    <h2>{{ contact | fullName }}</h2>
+    <h2>{{ contact.email }}</h2>
 </ng-container>
 <ng-template #elseTemplate>
     <p>Contacto not found.</p>
 </ng-template>
 
-<a routerLink="/contacts" [queryParams]="{sex: filterPrev}">Return</a>
+<a routerLink="/contacts" [queryParams]="{ sex: filterPrev }">Return</a>

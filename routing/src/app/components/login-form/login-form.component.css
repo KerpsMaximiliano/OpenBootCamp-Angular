@@ -1,0 +1,30 @@
+:host{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0rem;
+}
+
+/* Card Angular Material */
+mat-card {
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+mat-card-header {
+    display: unset;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Inputs Angular Material */
+mat-form-field {
+    display: block;
+    min-width: 300px;
+    width: 100%;
+}
