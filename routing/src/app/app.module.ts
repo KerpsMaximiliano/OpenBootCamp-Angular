@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +22,16 @@ import { FormValidatedComponent } from './components/forms/form-validated/form-v
 
 // ANGULAR MATERIAL
 import { MatFormFieldModule } from '@angular/material/form-field';
+
+// ANGULAR PIPES
 import { PipesExampleComponent } from './components/pipes-example/pipes-example.component';
+import { MultiplyPipe } from './pipes/multiply.pipe';
+import { CalculatePipe } from './pipes/calculate.pipe';
+
+// ANGULAR LOCALE DATA
+import { registerLocaleData } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+registerLocaleData(localeES); // Registración del LOCALE_ID en 'es'.
 
 @NgModule({
     declarations: [
@@ -37,6 +46,8 @@ import { PipesExampleComponent } from './components/pipes-example/pipes-example.
         FormArrayComponent,
         FormValidatedComponent,
         PipesExampleComponent,
+        MultiplyPipe,
+        CalculatePipe,
     ],
     imports: [
         BrowserModule,
@@ -47,7 +58,13 @@ import { PipesExampleComponent } from './components/pipes-example/pipes-example.
         ReactiveFormsModule,
         MatFormFieldModule,
     ],
-    providers: [],
+    providers: [
+        // Registramos el Locales en ES para que los PIPES sean idioma: Español.
+        {
+            provide: LOCALE_ID,
+            useValue: 'es',
+        },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

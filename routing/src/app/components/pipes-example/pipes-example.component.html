@@ -1,59 +1,153 @@
-<h1>PIPES NATIVES IN ANGULAR 13</h1>
-
-<!-- FECHAS -->
-<h2>S/PIPES</h2>
-<p>Cumpleaños: {{ dob }}</p>
-
-<br>
-
-<h2>PIPE Básico</h2>
-<p>Cumpleaños: {{ dob | date }}</p>
-
-<br>
-
-<h2>PIPE Format: dd/MM/YYYY</h2>
-<p>Cumpleaños: {{ dob | date: "dd/MM/yyyy" }}</p>
-
-<br>
-
-<h2>PIPE Format: Short/Full</h2>
-<p>
-    Cumpleaños: {{ dob | date: 'shortDate' }}
-    <strong>Short</strong>
-</p>
-<p>
-    Cumpleaños: {{ dob | date: 'fullDate' }}
-    <strong>Full</strong>
-</p>
-
-<br>
-
-<h2>PIPE Format: Short/Full</h2>
-<p>Cumpleaños: {{ dob | date: dateFormat }}</p>
-
-<button (click)="setFormat()">Change {{ !change ? 'Short' : 'Full' }}</button>
-
-<br><br>
-
-<h2>PIPE Format: Short/Full - MIN/MAY</h2>
-
-<p>
-    Cumpleaños: {{ dob | date: 'fullDate' | lowercase }}
-    <strong>(MIN)</strong>
-</p>
-<p>
-    Cumpleaños: {{ dob | date: 'fullDate' | uppercase }}
-    <strong>(MAY)</strong>
-</p>
-
-<br>
-
-<h2>PIPE Format: MIN/MAY</h2>
-<p>
-    {{ name | uppercase }}
-    <strong>(MAY)</strong>
-</p>
-<p>
-    @{{ name | lowercase }}
-    <strong>(MIN)</strong>
-</p>
+<table class="table">
+    <tr>
+        <td colspan="2">
+            <h1>DATE</h1>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>S/PIPES</h2></th>
+        <td>
+            <p>{{ dob }}</p>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>Básico</h2></th>
+        <td>
+            <p>{{ dob | date }}</p>
+        </td>
+    </tr>
+    <th><h2>dd/MM/YYYY</h2></th>
+    <td>
+        <p>{{ dob | date : "dd/MM/yyyy" }}</p>
+    </td>
+    <tr>
+        <th><h2>Short</h2></th>
+        <td>
+            <p>
+                {{ dob | date : "shortDate" }}
+                <strong>Short</strong>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>Full</h2></th>
+        <td>
+            <p>
+                {{ dob | date : "fullDate" }}
+                <strong>Full</strong>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <h2>Change S/F</h2>
+            <button (click)="setFormat()">
+                Change {{ !change ? "Short" : "Full" }}
+            </button>
+        </th>
+        <td>
+            <p>{{ dob | date : dateFormat }}</p>
+        </td>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <td colspan="2">
+            <h1>NUMBERS</h1>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <h2>number</h2>
+        </th>
+        <td>
+            <!-- number | number "entero.decimal-redondeo" -->
+            <p>{{ PI | number : "1.5-5" }}</p>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <h2>currency</h2>
+        </th>
+        <td>
+            <p>{{ priceOne | currency : "EUR" }}</p>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <h2>currency decimal</h2>
+        </th>
+        <td>
+            <p>{{ priceTwo | currency : "USD" : true : ".3-3" }}</p>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>PORCENT</h2></th>
+        <td>
+            <p>{{ count | percent : "2.2-2" }}</p>
+        </td>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <td colspan="2">
+            <h1>OBJECT</h1>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>json</h2></th>
+        <td>
+            <p>{{ person | json }}</p>
+        </td>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <td colspan="2">
+            <h1>TEXT</h1>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>SLICE</h2></th>
+        <td>
+            <p>{{ text | slice : 0 : 25 }}...</p>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>MIN</h2></th>
+        <td>
+            <p>
+                {{ "Maximiliano" | lowercase }}
+                <strong>(MIN)</strong>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>MAY</h2></th>
+        <td>
+            <p>
+                {{ "Maximiliano" | uppercase }}
+                <strong>(MAY)</strong>
+            </p>
+        </td>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <td colspan="2">
+            <h1>CUSTOM</h1>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>Multiply (C)</h2></th>
+        <td>
+            <p>{{ 2 | multiply : 10 }}</p>
+        </td>
+    </tr>
+    <tr>
+        <th><h2>Calculate (C)</h2></th>
+        <td>
+            <p>{{ playerOne | calculate }} | {{ playerTwo | calculate }}</p>
+        </td>
+    </tr>
+</table>
