@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RandomUserComponent } from './components/random-user/random-user.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ContactDetailtPageComponent } from './pages/contact-detailt-page/contact-detailt-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 const routes: Routes = [
     {
@@ -37,6 +39,11 @@ const routes: Routes = [
     {
         path: 'contacts/:id',
         component: ContactDetailtPageComponent,
+        canActivate: [AuthGuard],
+    },
+    {
+        path: 'random',
+        component: RandomContactPageComponent,
         canActivate: [AuthGuard],
     },
     {

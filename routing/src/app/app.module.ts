@@ -39,6 +39,8 @@ import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FullNamePipe } from './pipes/full-name.pipe';
+import { RandomUserComponent } from './components/random-user/random-user.component';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 registerLocaleData(localeES); // Registración del LOCALE_ID en 'es'.
 
@@ -59,6 +61,8 @@ registerLocaleData(localeES); // Registración del LOCALE_ID en 'es'.
         CalculatePipe,
         LoginFormComponent,
         FullNamePipe,
+        RandomUserComponent,
+        RandomContactPageComponent,
     ],
     imports: [
         BrowserModule,

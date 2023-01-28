@@ -1,0 +1,50 @@
+{
+    "results": [
+        {
+            "gender": "female",
+            "name": { "title": "Ms", "first": "Viktoria", "last": "Günter" },
+            "location": {
+                "street": { "number": 2742, "name": "Rosenstraße" },
+                "city": "Rastatt",
+                "state": "Baden-Württemberg",
+                "country": "Germany",
+                "postcode": 37659,
+                "coordinates": {
+                    "latitude": "-52.5049",
+                    "longitude": "136.8986"
+                },
+                "timezone": {
+                    "offset": "-1:00",
+                    "description": "Azores, Cape Verde Islands"
+                }
+            },
+            "email": "viktoria.gunter@example.com",
+            "login": {
+                "uuid": "f4c64cb0-4099-4cb4-80b9-677e1fc037ad",
+                "username": "organicgoose527",
+                "password": "reader",
+                "salt": "aMKVRtIb",
+                "md5": "cddd4006e4f157230391ea49297649ee",
+                "sha1": "5356a7a2fe4eda6abe58bb2b267ecd3d312a9be1",
+                "sha256": "9863956c6e4acb69c358f35eaca862444161b6392ca8f197ad0ebd9bb5701ef6"
+            },
+            "dob": { "date": "1971-06-02T05:30:17.206Z", "age": 51 },
+            "registered": { "date": "2020-03-27T14:34:19.697Z", "age": 2 },
+            "phone": "0970-2468901",
+            "cell": "0173-2168318",
+            "id": { "name": "SVNR", "value": "81 020671 G 676" },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/7.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/7.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/7.jpg"
+            },
+            "nat": "DE"
+        }
+    ],
+    "info": {
+        "seed": "ec9644d78ac72877",
+        "results": 1,
+        "page": 1,
+        "version": "1.4"
+    }
+}
