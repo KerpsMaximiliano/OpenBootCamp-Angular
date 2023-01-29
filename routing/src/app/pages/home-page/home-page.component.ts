@@ -28,6 +28,6 @@ export class HomePageComponent implements OnInit {
                 sex: 'all',
             },
         };
-        this.router.navigate(['contacts'], navigationExtras);
+        this.router.navigate(['/dashboard/contacts'], navigationExtras);
     }
 }

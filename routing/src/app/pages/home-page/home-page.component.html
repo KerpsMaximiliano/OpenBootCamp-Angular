@@ -27,8 +27,10 @@
 
 <div>
     <p>Filters</p>
-    <a [routerLink]="['/contacts']" [queryParams]="{ sex: 'female' }"
+    <a [routerLink]="['/dashboard/contacts']" [queryParams]="{ sex: 'female' }"
         >Amigas |
     </a>
-    <a [routerLink]="['/contacts']" [queryParams]="{ sex: 'male' }">| Amigos</a>
+    <a [routerLink]="['/dashboard/contacts']" [queryParams]="{ sex: 'male' }"
+        >| Amigos</a
+    >
 </div>

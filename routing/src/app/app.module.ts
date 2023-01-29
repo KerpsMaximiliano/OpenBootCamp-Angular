@@ -41,6 +41,18 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { RandomUserComponent } from './components/random-user/random-user.component';
 import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
+import { NavComponent } from './components/nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TaskPageComponent } from './pages/task-page/task-page.component';
+import { KanbanTasksComponent } from './components/kanban-tasks/kanban-tasks.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AnimationExampleComponent } from './components/animation-example/animation-example.component';
 
 registerLocaleData(localeES); // Registración del LOCALE_ID en 'es'.
 
@@ -63,18 +75,31 @@ registerLocaleData(localeES); // Registración del LOCALE_ID en 'es'.
         FullNamePipe,
         RandomUserComponent,
         RandomContactPageComponent,
+        NavComponent,
+        DashboardComponent,
+        TaskPageComponent,
+        KanbanTasksComponent,
+        AnimationExampleComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
+        // Módulo Animaciones.
         BrowserAnimationsModule,
         MatFormFieldModule,
         // Módulo custom de Angular Material.
         MaterialModule,
         // Formularios Reactivos.
         ReactiveFormsModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        DragDropModule,
     ],
     providers: [
         // Registramos el Locales en ES para que los PIPES sean idioma: Español.

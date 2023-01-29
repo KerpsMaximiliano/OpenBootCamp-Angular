@@ -1,5 +1,9 @@
 <h1>Contactos</h1>
 
+<div *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+
 <!-- TODO: Lista de contactos. -->
 <div *ngFor="let contact of listRandomContact">
     <div
@@ -9,7 +13,9 @@
         <h2 class="contact">
             {{ contact.name.first }} {{ contact.name.last }}
         </h2>
-        <button (click)="backToHome(contact)">Send contact</button>
+        <button mat-raised-button color="primary" (click)="backToHome(contact)">
+            Send contact
+        </button>
     </div>
 </div>
 
@@ -22,4 +28,4 @@
     <p>N/A filter.</p>
 </ng-template>
 
-<a routerLink="/home">Return</a>
+<a routerLink="/dashboard">Return</a>
