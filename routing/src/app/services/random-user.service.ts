@@ -20,23 +20,27 @@ export class RandomUserService {
             .pipe(retry(2), catchError(this.handleError));
     }
 
-    getRandomContacts(n: number): Observable<Results[]> {
-        const params: HttpParams = new HttpParams().set('results', n);
+    getRandomContacts(n: number, sex?: string): Observable<Results> {
+        let params: HttpParams = new HttpParams().set('results', n);
+
+        if (sex) {
+            params = params.append('gender', sex);
+        }
 
         return this.http
-            .get<Results[]>('https://randomuser.me/api', { params: params })
+            .get<Results>('https://randomuser.me/api', { params: params })
             .pipe(retry(2), catchError(this.handleError));
     }
 
-    getRandomContactsSex(sex: string): Observable<Results> {
-        const params: HttpParams = new HttpParams().set('gender', sex);
+    // getRandomContactsSex(sex: string): Observable<Results> {
+    //     const params: HttpParams = new HttpParams().set('gender', sex);
 
-        return this.http
-            .get<Results>('https://randomuser.me/api', {
-                params: params,
-            })
-            .pipe(retry(2), catchError(this.handleError));
-    }
+    //     return this.http
+    //         .get<Results>('https://randomuser.me/api', {
+    //             params: params,
+    //         })
+    //         .pipe(retry(2), catchError(this.handleError));
+    // }
 
     handleError(error: HttpErrorResponse) {
         if (error.status === 0) {

@@ -1,7 +1,7 @@
 <h1>Contact Detail</h1>
 
-<ng-container *ngIf="contact.email; else elseTemplate">
-    <h2>{{ id }}</h2>
+<ng-container *ngIf="contact; else elseTemplate">
+    <h2>ID: {{ id }}</h2>
     <h2>{{ contact | fullName }}</h2>
     <h2>{{ contact.email }}</h2>
 </ng-container>

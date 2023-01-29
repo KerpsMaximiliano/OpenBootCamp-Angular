@@ -1,14 +1,21 @@
 <h1>Contactos</h1>
 
 <!-- TODO: Lista de contactos. -->
-<div *ngFor="let contact of contacts">
-  <div routerLink="{{ contact.id }}" [state]="{ data: contact, filter: filterSex }">
-    <h2 class="contact"> {{ contact.name }} </h2>
-    <button (click)="backToHome(contact)">Send contact</button>
-  </div>
+<div *ngFor="let contact of listRandomContact">
+    <div
+        routerLink="{{ contact.id.name }}"
+        [state]="{ data: contact, filter: filterSex }"
+    >
+        <h2 class="contact">
+            {{ contact.name.first }} {{ contact.name.last }}
+        </h2>
+        <button (click)="backToHome(contact)">Send contact</button>
+    </div>
 </div>
 
-<ng-container *ngIf="filterSex == 'female' || filterSex == 'male' ; else listComplete">
+<ng-container
+    *ngIf="filterSex == 'female' || filterSex == 'male'; else listComplete"
+>
     <p>List {{ filterSex }}</p>
 </ng-container>
 <ng-template #listComplete>

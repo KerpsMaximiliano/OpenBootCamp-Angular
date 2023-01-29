@@ -1,8 +1,8 @@
 <h1>Home Page</h1>
 <h2>¡Bienvenido!</h2>
 
-<ng-container *ngIf="contactSelect;else notSelect">
-    <h3 *ngIf="contactSelect">{{ contactSelect.name }}</h3>
+<ng-container *ngIf="contactSelect; else notSelect">
+    <h3 *ngIf="contactSelect">{{ contactSelect.name.first }}</h3>
 </ng-container>
 <ng-template #notSelect>
     <div>
@@ -10,21 +10,25 @@
     </div>
 </ng-template>
 
-<br>
+<br />
 
 <!-- Ir a login -->
-<div>
-  <a *ngIf="!token" routerLink="/login">
-    Iniciar sesión
-  </a>
-</div>
+<!--
+    <div>
+        <a *ngIf="!token" routerLink="/login"> Iniciar sesión </a>
+    </div>
+-->
 
-<br>
+<br />
 
-<button (click)="goContacts()">Ver tus contactos</button>
+<button mat-raised-button color="primary" (click)="goContacts()">
+    Ver tus contactos
+</button>
 
 <div>
     <p>Filters</p>
-    <a [routerLink]="['/contacts']" [queryParams]="{sex: 'female'}">Amigas | </a>
-    <a [routerLink]="['/contacts']" [queryParams]="{sex: 'male'}">| Amigos</a>
+    <a [routerLink]="['/contacts']" [queryParams]="{ sex: 'female' }"
+        >Amigas |
+    </a>
+    <a [routerLink]="['/contacts']" [queryParams]="{ sex: 'male' }">| Amigos</a>
 </div>

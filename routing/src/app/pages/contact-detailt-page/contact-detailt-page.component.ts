@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IContact } from 'src/app/models/contact.interface';
+
+// import { IContact } from 'src/app/models/contact.interface';
+
+import { IRandomContact } from 'src/app/models/random-user.interface';
 
 @Component({
     selector: 'app-contact-detailt-page',
@@ -9,13 +12,16 @@ import { IContact } from 'src/app/models/contact.interface';
 })
 export class ContactDetailtPageComponent implements OnInit {
     id: any | undefined;
-    contact: IContact = {
-        id: 0,
-        name: '',
-        surname: '',
-        email: '',
-        sex: 'female',
-    };
+
+    // contact: IContact = {
+    //     id: 0,
+    //     name: '',
+    //     surname: '',
+    //     email: '',
+    //     sex: 'female',
+    // };
+
+    contact: IRandomContact | undefined;
     filterPrev: string = 'all';
 
     constructor(private route: ActivatedRoute) {}
