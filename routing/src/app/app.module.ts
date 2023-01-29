@@ -7,6 +7,11 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 // ANGULAR MATERIAL CUSTOM
 import { MaterialModule } from './modules/material/material.module';
@@ -37,22 +42,17 @@ import { MultiplyPipe } from './pipes/multiply.pipe';
 // ANGULAR LOCALE DATA
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
+
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { RandomUserComponent } from './components/random-user/random-user.component';
 import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TaskPageComponent } from './pages/task-page/task-page.component';
 import { KanbanTasksComponent } from './components/kanban-tasks/kanban-tasks.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { AnimationExampleComponent } from './components/animation-example/animation-example.component';
 
 registerLocaleData(localeES); // Registración del LOCALE_ID en 'es'.
 
@@ -79,7 +79,6 @@ registerLocaleData(localeES); // Registración del LOCALE_ID en 'es'.
         DashboardComponent,
         TaskPageComponent,
         KanbanTasksComponent,
-        AnimationExampleComponent,
     ],
     imports: [
         BrowserModule,
